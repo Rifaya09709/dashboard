@@ -1,6 +1,7 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 export interface ICategoryCount {
+  [key: string]: number;
   AV: number;
   BMS: number;
   CIVIL: number;

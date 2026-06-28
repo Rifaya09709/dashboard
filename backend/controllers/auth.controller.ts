@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import User from './models/User.model';
+import User from '../models/user.model';
 
 const generateToken = (id: string): string =>
   jwt.sign({ id }, process.env.JWT_SECRET || 'secret123', { expiresIn: '7d' });

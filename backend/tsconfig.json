@@ -8,7 +8,9 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": false,
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "allowJs": true,
+    "transpileOnly": true
   },
   "exclude": [
     "node_modules",

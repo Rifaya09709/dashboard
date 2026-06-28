@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
-    "dev": "tsx watch server.ts",
-    "build": "tsc || true",
+    "build": "tsc --outDir dist --rootDir . --module commonjs controllers/**/*.ts routes/**/*.ts models/**/*.ts middleware/**/*.ts *.ts",
     "start": "node dist/server.js",
+    "dev": "npx tsx server.ts",
     "seed": "npx tsx seed.ts"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",

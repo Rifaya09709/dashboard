@@ -5,8 +5,10 @@
     "outDir": "./dist",
     "rootDir": "./",
     "strict": false,
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "noImplicitAny": false,
+    "noEmitOnError": false
   },
   "exclude": [
     "node_modules",

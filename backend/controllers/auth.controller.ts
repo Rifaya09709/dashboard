@@ -7,7 +7,7 @@ const generateToken = (id: string): string =>
   jwt.sign({ id }, process.env.JWT_SECRET || 'secret123', { expiresIn: '7d' });
 
 export const login = async (req: Request, res: Response): Promise<void> => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
   try {
     let user = await User.findOne({ email });
 

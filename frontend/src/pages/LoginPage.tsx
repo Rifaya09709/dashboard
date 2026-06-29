@@ -85,7 +85,8 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
     if (!validate()) return;
     setLoading(true);
     try {
-      const url = isRegister ? "/api/auth/register" : "/api/auth/login";
+      const BASE = import.meta.env.VITE_API_URL || "/api";
+const url = isRegister ? `${BASE}/auth/register` : `${BASE}/auth/login`;
       const body = isRegister
         ? { name: form.name.trim(), email: form.email, password: form.password }
         : { email: form.email, password: form.password };

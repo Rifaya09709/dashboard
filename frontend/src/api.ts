@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+const API_BASE = 'https://dashboard-cafm.onrender.com/api';
+const api = axios.create({ baseURL: API_BASE });
 
 export interface WorkOrder {
   _id: string;

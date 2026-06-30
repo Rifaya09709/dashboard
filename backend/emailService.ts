@@ -20,7 +20,7 @@ export interface EmailData {
   workOrderId?:   string; // ← for feedback links
 }
 
-const BASE_URL = process.env.BASE_URL || 'http://localhost:5000';
+const BASE_URL = process.env.BASE_URL || 'https://dashboard-cafm-flydubai.onrender.com';
 
 const getFeedbackLinks = (data: EmailData) => {
   if (!data.workOrderId) return '<p style="font-size:28px;letter-spacing:10px;">😞 😐 😊</p>';

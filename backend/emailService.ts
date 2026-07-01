@@ -1,12 +1,6 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export interface EmailData {
   toEmail: string;
@@ -85,8 +79,8 @@ ${feedbackSection}
 </div></body></html>`;
 
   try {
-    await transporter.sendMail({
-      from: `"FM Dashboard" <${process.env.EMAIL_FROM}>`,
+    await resend.emails.send({
+      from: 'FM Dashboard <shafeeqmohamed478@gmail.com>',
       to: data.toEmail,
       subject: `Service Request ${data.serviceRequest} - RESOLVED`,
       html,
@@ -100,8 +94,8 @@ ${feedbackSection}
 export const sendDueDateReminderEmail = async (data: EmailData): Promise<void> => {
   const html = `<h2>Reminder: ${data.serviceRequest} due ${data.dueDate}</h2>`;
   try {
-    await transporter.sendMail({
-      from: `"FM Dashboard" <${process.env.EMAIL_FROM}>`,
+    await resend.emails.send({
+      from: 'FM Dashboard <shafeeqmohamed478@gmail.com>',
       to: data.toEmail,
       subject: `Reminder: Work Order ${data.serviceRequest} Due Soon`,
       html,

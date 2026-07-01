@@ -2,10 +2,11 @@
   "name": "cafm-backend",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node dist/server.js",
     "dev": "npx tsx server.ts",
-    "seed": "npx tsx seed.ts"
+    "seed": "npx tsx seed.ts",
+    "test:email": "ts-node test.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -16,7 +17,6 @@
     "mongoose": "^8.0.3",
     "node-cron": "^3.0.3",
     "nodemailer": "^6.9.7",
-    "resend": "^6.16.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
